@@ -3,6 +3,13 @@ import tkinter as tk
 master = tk.Tk()
 master.title("Peminjaman Alat UKM")
 master.geometry("500x500")
+master.resizable(False, False)
+
+def result():
+    showinfo(
+        title='Peminjaman Alat',
+        message="Data Berhasil Disimpan"
+    )
 
 inputNama = tk.Entry(master)
 inputInstansi = tk.Entry(master)
@@ -24,5 +31,7 @@ tk.Label(master, text = "Barang                      : ").grid(row=4, column=0)
 inputBarang.grid(row=4, column=1)
 tk.Label(master, text = "Status Peminjaman : ").grid(row=5, column=0)
 inputStatus.grid(row=5, column=1)
+
+button = Button (master, text="Tambahkan data",command=result).grid(row=7, column=1)
 
 tk.mainloop()
